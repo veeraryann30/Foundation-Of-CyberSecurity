@@ -1,0 +1,66 @@
+Experiment: Port Scanning and Information Gathering Using Nmap
+Aim
+To perform port scanning and information gathering using Nmap and identify open, closed, and filtered ports on an authorized target system.
+
+Tool Required
+Nmap (Network Mapper)
+Windows/Linux System
+Command Prompt / Terminal
+Authorized Target System
+Core Concepts
+Nmap is a network scanning tool used to discover hosts, identify open ports, detect running services, and gather basic information about a network or system.
+
+Port States
+Open: A service is actively listening on the port.
+Closed: The port is reachable, but no service is listening.
+Filtered: Nmap cannot determine whether the port is open because a firewall or filtering device is blocking the scan.
+Procedure and Commands
+Step 1: Check Nmap Installation
+nmap --version
+Step 2: Perform a Basic Scan
+nmap 127.0.0.1
+This performs a basic scan of the local system.
+
+Step 3: Scan Specific Ports
+nmap -p 22,80,443 127.0.0.1
+This scans ports 22, 80, and 443.
+
+Step 4: Scan a Port Range
+nmap -p 1-1000 127.0.0.1
+This scans ports from 1 to 1000.
+
+Step 5: Service and Version Detection
+nmap -sV 127.0.0.1
+This attempts to identify the services and their versions running on open ports.
+
+Step 6: Operating System Detection
+nmap -O 127.0.0.1
+This attempts to identify the operating system of the target.
+
+Step 7: Save Scan Results
+nmap -sV 127.0.0.1 -oN scan_results.txt
+This saves the scan results in a text file.
+
+Steps
+Install Nmap on the system.
+Open Command Prompt or Terminal.
+Select an authorized target system.
+Check whether Nmap is installed using the nmap --version command.
+Perform a basic port scan.
+Identify open, closed, and filtered ports.
+Perform service and version detection using -sV.
+Perform OS detection using -O.
+Save the scan results for documentation.
+Analyze the information obtained from the scan.
+Sample Output
+PORT    STATE    SERVICE
+22/tcp  open     ssh
+80/tcp  open     http
+443/tcp open     https
+The output may vary depending on the target system.
+
+Conclusion
+Nmap was successfully used to perform basic port scanning and information gathering. The experiment demonstrated how to identify port states and gather information about services running on an authorized system. Nmap is useful for network administration, security auditing, and identifying exposed services.
+
+Safety Note
+Nmap should only be used on systems that you own or have explicit permission to scan.
