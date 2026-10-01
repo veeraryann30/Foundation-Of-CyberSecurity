@@ -1,0 +1,71 @@
+Experiment 2: Buffer Overflow Vulnerability and Mitigation
+Subject
+Foundation of Cyber Security
+
+Aim
+To understand buffer overflow vulnerability in C, demonstrate its effect in a controlled environment, and study mitigation strategies.
+
+Vulnerable C Program
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char buffer[10];
+
+    printf("Enter a string: ");
+    gets(buffer);
+
+    printf("You entered: %s\n", buffer);
+
+    return 0;
+}
+Explanation
+The program contains a character array named buffer with a size of 10 bytes.
+
+The gets() function does not check the size of the input. If the user enters more characters than the buffer can hold, the extra data can overwrite adjacent memory.
+
+This condition is known as a Buffer Overflow.
+
+Vulnerable Function
+gets(buffer);
+The gets() function is unsafe because it does not perform input length checking.
+
+Demonstration
+When input exceeds the allocated buffer size, the program may produce unexpected behavior or crash.
+
+This demonstrates the basic effect of a buffer overflow vulnerability.
+
+Mitigation
+A safer version of the program uses fgets():
+
+#include <stdio.h>
+
+int main() {
+    char buffer[10];
+
+    printf("Enter a string: ");
+    fgets(buffer, sizeof(buffer), stdin);
+
+    printf("You entered: %s", buffer);
+
+    return 0;
+}
+Mitigation Strategies
+Avoid unsafe functions such as gets().
+Use bounded input functions such as fgets().
+Validate input length before processing it.
+Use compiler security protections such as stack canaries.
+Enable modern memory protection mechanisms such as ASLR and NX/DEP.
+Perform regular code review and security testing.
+Result
+The buffer overflow vulnerability was studied using a vulnerable C program, and appropriate mitigation techniques were implemented.
+
+Conclusion
+Buffer overflow occurs when more data is written to a buffer than it can hold. Using safe input functions, proper input validation, and security mechanisms helps prevent buffer overflow vulnerabilities.
+
+Tools Used
+C Programming Language
+GCC Compiler
+GitHub
+Safety Note
+This experiment is intended for educational purposes and should only be performed in a controlled environment using programs you are authorized to test.
