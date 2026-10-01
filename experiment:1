@@ -1,0 +1,67 @@
+Experiment 1: Information Gathering Using Google
+Subject
+Foundation of Cyber Security
+
+Aim
+To study information gathering using different Google search techniques.
+
+Google Search Techniques
+1. site:
+Searches for information from a specific website or domain.
+
+Example:
+site:edu.in cyber security
+
+2. filetype:
+Searches for a specific type of file.
+
+Example:
+filetype:pdf cyber security
+
+3. intitle:
+Searches for pages containing a specific word in the title.
+
+Example:
+intitle:cyber security
+
+4. allintitle:
+Searches for pages containing all specified words in the title.
+
+Example:
+allintitle:cyber security
+
+5. inurl:
+Searches for pages containing a specific word in the URL.
+
+Example:
+inurl:login
+
+6. allinurl:
+Searches for pages containing all specified words in the URL.
+
+Example:
+allinurl:cyber security
+
+7. intext:
+Searches for a specific word in the text of webpages.
+
+Example:
+intext:cybersecurity
+
+8. allintext:
+Searches for webpages containing all specified words in their text.
+
+Example:
+allintext:cyber security
+
+Result
+Different Google search techniques were studied and used for targeted information gathering.
+
+Conclusion
+Google search operators help in finding publicly available information efficiently by filtering search results according to specific requirements.
+
+Tools Used
+Google Search Engine
+Web Browser
+Safety Note
+These techniques are used only for educational purposes and should be limited to publicly available information.
