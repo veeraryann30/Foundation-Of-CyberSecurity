@@ -1,0 +1,37 @@
+Experiment No. 4 – Wireshark: Network Traffic Analysis
+
+Date: 17/09/2026
+
+Aim: To install Wireshark, capture network traffic and identify different protocols and data types.
+
+Tools Required: Wireshark, computer and network connection.
+
+Theory:
+
+Wireshark is a network protocol analyzer used to capture and analyze network packets. It helps identify protocols, source and destination addresses, and protocol data.
+
+Procedure:
+
+Install and open Wireshark.
+Select the active network interface (Wi-Fi/Ethernet).
+Start capturing network traffic.
+Generate network activity by browsing websites.
+Stop the capture and examine packet details.
+Identify protocols such as TCP, UDP, DNS and ICMP.
+
+Packet Analysis:
+
+TCP: Ensures reliable data transmission.
+DNS: Converts domain names into IP addresses.
+ICMP: Used for network diagnostics and error reporting.
+
+Types of Data Observed:
+
+Control Data: Connection establishment and management.
+Addressing Data: Source and destination MAC/IP addresses.
+Application Data: Data exchanged by applications.
+Protocol Information: TCP, UDP, DNS and ICMP headers.
+
+Result:
+
+Wireshark was successfully used to capture and analyze network traffic. Different protocols, packets and data types were identified.
