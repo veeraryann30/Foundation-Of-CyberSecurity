@@ -1,0 +1,90 @@
+EXPERIMENT 8
+Date: 29-10-2026
+Title: To install and configure Snort as an Intrusion Detection System (IDS), create a custom detection rule,
+generate test network traffic and analyze the alerts produced by Snort.
+Requirements
+• Kali Linux Virtual Machine
+• VirtualBox
+• Snort
+• Administrator privileges
+Theory
+An IDS monitors network traffic to detect suspicious activities and generate alerts when predefined rules match
+the traffic.
+Snort is an open-source network security tool used for real-time traffic analysis and intrusion detection.
+Types of IDS
+1. Network-Based IDS (NIDS): Monitors packets travelling through a network to detect suspicious traffic.
+2. Host-Based IDS (HIDS): Monitors activities on an individual computer, such as files, processes and system
+logs.
+Procedure
+1. Install and Verify Snort
+sudo apt update
+sudo apt install snort -y
+snort -V
+• sudo: Executes commands with administrator privileges.
+• apt update: Updates the package list.
+• sudo apt install snort -y: Installs Snort and automatically confirms installation.
+• snort -V: Displays the installed Snort version.
+2. Identify the Network Interface
+ip -br addr
+ip route
+• ip -br addr: Displays network interfaces and their IP addresses in brief format.
+• ip route: Displays routing information and the default gateway.
+3. Create a Custom Rule
+mkdir -p ~/snort-lab
+cd ~/snort-lab
+nano local.rules
+Enter the following rule in local.rules:
+alert icmp any any -> any any (msg:"LAB: ICMP traffic detected"; sid:1000001; rev:1;)
+• alert: Generates an alert when the rule matches.
+• icmp: Monitors ICMP traffic (commonly used by the ping command).
+Cyber Security Lab — Experiments 6 to 8 Page 6
+• any any: Matches any source IP address and source port.
+• ->: Specifies the traffic direction.
+• msg: Defines the alert message.
+• sid:1000001: Assigns a unique identifier to the custom rule.
+• rev:1: Specifies the rule revision number.
+4. Validate the Configuration
+sudo snort -T -c /etc/snort/snort.lua
+• -T: Tests the configuration.
+• -c: Specifies the configuration file.
+5. Start Snort in IDS Mode
+sudo snort -q -c /etc/snort/snort.lua -R /home/kali/snort-lab/local.rules -i eth0 -A
+alert_fast
+• -q: Suppresses startup messages.
+• -c: Loads the configuration file.
+• -R: Loads the custom rule file.
+• -i: Selects the network interface.
+• -A alert_fast: Displays alerts in a concise format.
+6. Generate Test Traffic
+Open another terminal and execute:
+ping -c 4 10.0.2.2
+• ping: Tests network connectivity using ICMP.
+• -c 4: Sends four ping requests.
+• 10.0.2.2: Example gateway address. Replace it with your actual lab gateway if required.
+7. Analyse Alerts
+Observe the Snort terminal for the message:
+LAB: ICMP traffic detected
+The alert provides information about the matching rule, protocol and source and destination IP addresses.
+8. Save and View Alerts
+sudo snort -q -c /etc/snort/snort.lua -R /home/kali/snort-lab/local.rules -i eth0 -A
+alert_fast 2>&1 | tee ~/snort-lab/alerts.log
+Generate test traffic in the second terminal, then view the saved alerts:
+cat ~/snort-lab/alerts.log
+• cat: Displays the contents of the log file.
+• Ctrl + C: Stops the running Snort process.
+• 2>&1: Combines error output with standard output.
+• |: Sends the output to the next command.
+• tee: Displays the output and saves it to alerts.log.
+Result
+Cyber Security Lab — Experiments 6 to 8 Page 7
+Snort was configured as an IDS, a custom ICMP rule was created, test network traffic was generated and security
+alerts were successfully analysed.
+Precautions
+1. Use only authorized networks for testing.
+2. Verify the interface and gateway before testing.
+3. Validate the Snort configuration before monitoring.
+4. Remember that an alert does not necessarily indicate an attack.
+Technical note: The Snort configuration commands shown here follow the notebook text. Snort versions and configuration
+formats can differ; verify the correct configuration file and command syntax for the installed version before running them. Run
+traffic tests only in an authorized lab.
+MD5 and SHA-1 are included for academic study, but SHA-256 is preferred for modern security applications.
