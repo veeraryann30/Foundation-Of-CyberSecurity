@@ -1,0 +1,39 @@
+Experiment No. 5 – Password Testing Using Hydra
+
+Date: 24/09/2026
+
+Aim: To perform brute-force and dictionary attacks using Hydra on a test system to understand password vulnerabilities.
+
+Tools Required:
+
+Kali Linux, Hydra, authorized test server, test username and password wordlist.
+
+Theory:
+
+Hydra is a password-testing tool used to identify weak passwords. A dictionary attack tests passwords from a predefined wordlist, while a brute-force attack tries different character combinations.
+
+Procedure:
+
+Install and start Kali Linux.
+Verify that Hydra is installed.
+Set up an authorized test server and test account.
+Prepare a password wordlist.
+Perform dictionary and brute-force tests using Hydra in the lab environment.
+Observe authentication attempts and record the results.
+Monitor suspicious login attempts.
+
+Types of Attacks:
+
+Dictionary Attack: Tests passwords from a predefined wordlist.
+Brute-Force Attack: Tries different password combinations until a match is found.
+
+Prevention:
+
+Use strong and unique passwords.
+Enable Multi-Factor Authentication (MFA).
+Apply login attempt limits and account lockout.
+Monitor suspicious login attempts.
+
+Result:
+
+Dictionary and brute-force password-testing techniques using Hydra were studied in an authorized test environment, and password security measures were understood.
