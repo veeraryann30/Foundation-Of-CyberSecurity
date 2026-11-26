@@ -1,0 +1,88 @@
+Aim - To analyze Instagram network traffic and study browser cookies.
+
+Theory - Network traffic is the data exchanged between a browser and a website. When Instagram is opened, the browser sends requests to Instagram servers and receives responses. Instagram uses HTTPS, which encrypts communication between the browser and the website. Therefore, a normal network capture generally shows connection details and encrypted traffic, not readable private page contents.
+
+Cookies are small pieces of data stored by a web browser for a website. They may be used for session management, preferences and security. Cookie settings help control how and when cookies are sent.
+
+Tools Required:
+
+1. A computer with Google Chrome or Microsoft Edge.
+2. Internet connection.
+3. Instagram website.
+4. Browser Developer Tools (Network and Application tabs).
+
+Procedure:
+
+1. Analyze Instagram Traffic using Network Tab
+
+— Open Google Chrome or Microsoft Edge.
+
+— Visit https://www.instagram.com/ using your own account or remain signed out.
+
+— Press F12 or right-click the page and select Inspect.
+
+— Open the Network tab in Developer Tools.
+
+— Reload the Instagram webpage.
+
+— Observe the requests generated while the page loads.
+
+— Note details such as request method, status code, domain and resource type.
+
+— Do not copy or share private headers, cookie values, passwords or authentication tokens.
+
+2. Study Cookies using Application Tab
+
+— In Developer Tools, open the Application tab. If it is not visible, select it from the » menu.
+
+— Under Storage, select Cookies.
+
+— Select the Instagram website entry if it is available.
+
+— Observe cookie names and their security attributes. Do not reveal, copy or record cookie values.
+
+— Study the following cookie attributes:
+
+a. Secure:
+— Ensures that the cookie is sent only over a secure HTTPS connection.
+
+b. HttpOnly:
+— Prevents client-side JavaScript from reading the cookie.
+
+c. SameSite:
+— Controls whether cookies are sent with requests initiated from other websites.
+
+d. Domain:
+— Specifies the website domain that can receive the cookie.
+
+e. Path:
+— Specifies the URL path for which the cookie is valid.
+
+f. Expires / Max-Age:
+— Specifies how long the cookie remains valid.
+
+Observations:
+
+1. The Network tab displays the requests made when Instagram loads.
+
+2. The requests include different resource types such as documents, scripts, images and other resources.
+
+3. HTTPS encrypts the communication between the browser and Instagram.
+
+4. The Application tab may display cookies stored for the Instagram website.
+
+5. Cookie attributes provide security and privacy controls.
+
+Result - Instagram network activity was observed using the browser Developer Tools, and the purpose of browser cookies and their security attributes was studied.
+
+Precautions:
+
+1. Perform this practical only on your own device and account, or while signed out.
+
+2. Do not inspect another person's account or private traffic.
+
+3. Never share cookie values, session identifiers, passwords or authentication tokens.
+
+4. Do not attempt to use or replay cookies to access an account.
+
+5. Use the browser's built-in Developer Tools and do not bypass HTTPS security.
