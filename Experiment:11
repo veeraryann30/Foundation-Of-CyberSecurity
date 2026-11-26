@@ -1,0 +1,62 @@
+Aim - To detect and prevent phishing attacks using GoPhish.
+
+Theory - Phishing is a social engineering attack in which an attacker attempts to trick people into sharing sensitive information or opening unsafe links. Organizations use authorized phishing simulations to teach users how to recognize suspicious messages.
+
+GoPhish is an open-source phishing simulation platform used for security awareness training. In a controlled lab, it can be used to create a harmless training email, send it only to consenting test accounts, and review aggregate campaign results. This practical uses a training-only simulation and must not collect real passwords or personal information.
+
+Requirements:
+1. A computer with an updated web browser.
+2. GoPhish installed in an isolated lab environment.
+3. A test email account or mail server configured for the lab.
+4. One or more consenting test recipients.
+5. Permission from the system or network owner.
+
+Procedure:
+
+1. Prepare the Lab
+— Use a private lab network or an approved training environment.
+— Install and open GoPhish by following its official documentation.
+— Keep the administration interface restricted to the local machine or trusted lab network.
+— Use only test recipients who have agreed to participate.
+
+2. Configure a Training Campaign
+— Create a training email that clearly belongs to an authorized awareness exercise.
+— Use a harmless example link that leads to a training explanation page.
+— Do not imitate a real organization in a deceptive way, collect passwords, or request personal or financial information.
+— Configure the campaign for the consenting test recipients only.
+
+3. Run the Simulation
+— Start the approved test campaign.
+— Ask participants to identify warning signs such as unfamiliar senders, unexpected requests, suspicious links, urgent language and spelling or domain mismatches.
+— End the exercise after the agreed test period.
+
+4. Review Results
+— Review only the campaign metrics needed for awareness training, such as message delivery and training-page visits.
+— Do not collect or store credentials.
+— Share aggregate results with the instructor or authorized administrator.
+— Provide participants with guidance on reporting suspicious messages.
+
+Detection and Prevention:
+1. Check the sender's email address and domain carefully.
+2. Avoid opening unexpected links or attachments.
+3. Verify unusual requests through a separate trusted communication channel.
+4. Use multi-factor authentication where available.
+5. Keep browsers, operating systems and security software updated.
+6. Report suspicious emails to the organization's IT or security team.
+7. Conduct regular security awareness training.
+
+Observations:
+1. GoPhish can organize an authorized awareness simulation.
+2. A controlled campaign can show whether training messages were delivered and whether the training page was visited.
+3. Users can learn to identify suspicious sender details, links and urgent requests.
+4. Training results can help improve awareness without collecting passwords.
+
+Result - A controlled phishing-awareness simulation was studied using GoPhish, and common methods for detecting and preventing phishing attacks were identified.
+
+Precautions:
+1. Obtain written permission before conducting any simulation.
+2. Use only consenting test recipients and approved lab infrastructure.
+3. Never send phishing messages to the public or unrelated people.
+4. Never collect real passwords, authentication codes or personal information.
+5. Do not impersonate real services to deceive users outside the approved exercise.
+6. Protect campaign reports and delete test data when it is no longer 
