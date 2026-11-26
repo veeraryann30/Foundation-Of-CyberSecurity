@@ -1,0 +1,100 @@
+Aim - To implement a basic keylogger simulation in C.
+
+Theory - A keylogger is a program that records keyboard input. Keyloggers can be misused to collect private information, such as passwords and messages, without a person's knowledge.
+
+In this practical, a safe keylogging simulation is implemented in C. The program records only the characters that the user intentionally types into its own terminal window. It does not capture keystrokes from other applications, run in the background, or collect passwords.
+
+The program demonstrates basic file handling in C by saving the entered text into a local text file.
+
+Requirements:
+1. A computer.
+2. C compiler (GCC or another standard C compiler).
+3. Text editor or IDE such as Visual Studio Code.
+
+C Program:
+
+#include <stdio.h>
+
+int main(void)
+{
+    FILE *file;
+    int ch;
+
+    file = fopen("keylog.txt", "w");
+
+    if (file == NULL)
+    {
+        printf("Error: Could not create the output file.\n");
+        return 1;
+    }
+
+    printf("Safe Keylogger Simulation\n");
+    printf("Type text in this terminal. Press ENTER to finish.\n");
+    printf("Your typed text will be saved in keylog.txt.\n\n");
+
+    while ((ch = getchar()) != '\n' && ch != EOF)
+    {
+        fputc(ch, file);
+    }
+
+    fclose(file);
+
+    printf("\nInput saved successfully in keylog.txt.\n");
+
+    return 0;
+}
+
+Procedure:
+
+1. Open a C compiler or IDE.
+2. Create a new file and save it as keylogger.c.
+3. Type the above C program into the editor.
+4. Compile the program using a C compiler.
+5. Run the program.
+6. Enter sample text in the terminal when prompted.
+7. Press ENTER to finish the input.
+8. Open the generated keylog.txt file to view the text entered during the test.
+
+Compilation Command:
+
+gcc keylogger.c -o keylogger
+
+Execution Command:
+
+./keylogger
+
+Note - On Windows, run the compiled program using:
+
+keylogger.exe
+
+Sample Output:
+
+Safe Keylogger Simulation
+Type text in this terminal. Press ENTER to finish.
+Your typed text will be saved in keylog.txt.
+
+Hello Cyber Security
+
+Input saved successfully in keylog.txt.
+
+Contents of keylog.txt:
+
+Hello Cyber Security
+
+Observations:
+
+1. The program accepts keyboard input from its own terminal.
+2. The entered characters are written into a text file named keylog.txt.
+3. The file is created in the program's current working directory.
+4. The program stops recording when the user presses ENTER.
+5. The program does not monitor keyboard activity in other applications.
+
+Result - A basic keylogger simulation was successfully implemented in C using standard input and file handling. The program recorded user-entered terminal text in a local file.
+
+Precautions:
+
+1. Use the program only for your own test input.
+2. Do not use keylogging software to monitor another person's activity.
+3. Never collect passwords, private messages or confidential information.
+4. Make sure users know when their input is being recorded.
+5. Do not run keyboard-monitoring programs without permission.
