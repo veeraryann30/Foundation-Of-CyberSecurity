@@ -1,0 +1,71 @@
+Aim - To configure a Next-Generation Firewall (NGFW) using pfSense.
+
+Theory - A firewall is a network security system that monitors and controls incoming and outgoing network traffic according to defined rules. A Next-Generation Firewall provides traditional firewall functions along with additional security capabilities, depending on the platform and installed features.
+
+pfSense is a firewall and router software platform. It can be used in a lab to configure network interfaces, firewall rules, NAT, and security-related services. Firewall rules determine which traffic is allowed or blocked between network interfaces.
+
+Requirements:
+1. A computer capable of running virtualization software or a dedicated lab device.
+2. pfSense installation image.
+3. Virtualization software such as VirtualBox or VMware, if using a virtual lab.
+4. At least two virtual network interfaces for WAN and LAN in a lab.
+5. A web browser to access the pfSense web configurator.
+
+Procedure:
+
+1. Set Up the Lab
+— Create an isolated virtual machine or use an approved dedicated lab device.
+— Attach separate network interfaces for WAN and LAN.
+— Keep the lab separate from the home, college or organization production network.
+— Install pfSense using its official installation instructions.
+
+2. Assign Network Interfaces
+— Open the pfSense console.
+— Assign the available interfaces as WAN and LAN.
+— Use the LAN interface for the trusted test network.
+— Record the LAN IP address shown by the console.
+
+3. Open the Web Configurator
+— Connect the lab computer to the LAN network.
+— Open a browser and enter the pfSense LAN address.
+— Sign in using the credentials configured during installation.
+— Complete the initial setup wizard and set a strong administrator password.
+
+4. Configure Basic Firewall Rules
+— Open Firewall > Rules.
+— Select the LAN tab.
+— Review the default rules before making changes.
+— Add only the rules required for the lab, using the correct source, destination, protocol and port.
+— Keep the administrator interface accessible only from the trusted LAN.
+— Apply changes and verify that permitted and blocked test traffic behaves as expected.
+
+5. Configure NAT and Services
+— Review Firewall > NAT to understand outbound NAT settings.
+— Keep the default automatic outbound NAT configuration for a basic isolated lab unless the exercise requires otherwise.
+— Review DHCP settings for the LAN interface if client devices need automatic IP addresses.
+— Enable only the services required for the lab.
+
+6. Test and Verify
+— From a lab client, verify that it receives the expected IP configuration.
+— Test access to an approved website or lab service.
+— Check that traffic not allowed by the configured rules is blocked.
+— Review Status > System Logs > Firewall to observe allowed or blocked traffic, where logging is enabled.
+— Save a record of the rule purpose and test result.
+
+Observations:
+1. pfSense provides a web-based interface for firewall administration.
+2. Network interfaces can be assigned to separate WAN and LAN networks.
+3. Firewall rules control traffic according to source, destination, protocol and port.
+4. NAT allows private lab devices to communicate through the configured WAN connection.
+5. Firewall logs help an administrator review traffic that matches logged rules.
+
+Result - pfSense was installed in an isolated lab environment, basic network interfaces and firewall rules were configured, and traffic behavior was tested.
+
+Precautions:
+1. Perform configuration only on equipment and networks you own or are authorized to manage.
+2. Use an isolated lab; do not experiment on a live college, workplace or home router.
+3. Keep the web configurator restricted to the trusted LAN.
+4. Do not create broad allow rules or expose management services to the internet.
+5. Back up the configuration before making significant changes.
+6. Use strong administrator credentials and keep pfSense updated.
+7. If connectivity is lost, use the local console to review or restore the lab configuration.
